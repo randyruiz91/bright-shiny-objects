@@ -2,10 +2,44 @@
 // │ Your code here! │
 // └─────────────────┘
 
+function createUser(first, last) {
+    const user = {
+        firstName: first,
+        lastName: last
+    };
+    return user;
+}
 
+function setAge (user, age) {
+    user.age = age;
+    return user;
+}
 
+function incrementAge (user) {
+    user.age += 1;
+    return user;
+}
 
+function fixCar (car) {
+    car.needsMaitenance = false;
+    return car;
+}
 
+function addGrades (student, newGrades) {
+    for (let i = 0; i < newGrades.length; i++) {
+        const newGrade = newGrades[i];
+        student.grades.push(newGrade);
+    }
+    return student;
+}
+
+function getDataType (object, key) {
+    return typeof object[key];
+}
+
+function addTodo (todos, newTodo) {
+    
+}
 
 
 
