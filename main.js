@@ -38,9 +38,42 @@ function getDataType (object, key) {
 }
 
 function addTodo (todos, newTodo) {
-    
+    todos.push(newTodo);
+    return todos;
 }
 
+function addSong(playlist, newSong) {
+    const newDuration = playlist.duration + newSong.duration;
+    playlist.duration = newDuration;
+
+    playlist.songs.push(newSong);
+
+    return playlist;
+}
+
+function updateReportCard(reportCard, newGrade) {
+    reportCard.grades.push(newGrade);
+
+    let gradeSum = 0;
+
+    for (let i = 0; i < reportCard.grades.length; i++) {
+        const grade = reportCard.grades[i];
+        
+        if (grade < reportCard.lowestGrade) {
+            reportCard.lowestGrade = grade;
+        }
+        
+        if (grade > reportCard.hightestGrade) {
+            reportCard.highestGrade = grade;
+        }
+        
+        gradeSum = gradeSum + grade;
+    }
+    
+    reportCard.averageGrade = gradeSum / reportCard.grades.length;
+
+    return reportCard;
+}
 
 
 
